@@ -1,0 +1,454 @@
+/* Responsive Design - Mobile, Tablet, Desktop */
+
+/* Extra Large Display - Projectors and Large Screens */
+@media (min-width: 1600px) {
+    .strategy-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    .assignment-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    .strategy-card {
+        padding: var(--spacing-lg);
+    }
+
+    .strategy-card.current-player {
+        transform: scale(1.2);
+    }
+
+    .card-image {
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Large Desktop (default - 4 column grid already set) */
+@media (min-width: 1200px) {
+    .strategy-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .assignment-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Medium Desktop / Laptop */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .strategy-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .assignment-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .view-container {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Magnified Viewer Responsive */
+@media (max-width: 1400px) {
+    .magnified-viewer {
+        width: 350px;
+        right: 10px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 991px) and (min-width: 768px) {
+    .magnified-viewer {
+        width: 300px;
+        padding: var(--spacing-md);
+    }
+
+    .magnified-card-name {
+        font-size: 1.4rem;
+    }
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .strategy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .assignment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timer-display {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .phase-nav {
+        flex-wrap: wrap;
+    }
+
+    .players-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-footer {
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile Large */
+@media (max-width: 767px) and (min-width: 576px) {
+    .magnified-viewer {
+        display: none !important;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .view-container {
+        padding: var(--spacing-sm);
+    }
+
+    .strategy-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .assignment-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .strategy-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .timer-display {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .timer-value {
+        font-size: 1.2rem;
+    }
+
+    .phase-nav {
+        flex-direction: column;
+    }
+
+    .phase-btn {
+        width: 100%;
+    }
+
+    #add-player-form {
+        flex-direction: column;
+    }
+
+    .players-list {
+        grid-template-columns: 1fr;
+    }
+
+    .speaker-options {
+        flex-direction: column;
+    }
+
+    .main-footer {
+        flex-direction: column;
+    }
+
+    .main-footer .btn {
+        width: 100%;
+    }
+
+    .vote-entry {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+
+    .vote-player-name {
+        font-weight: 600;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .action-player-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .action-player-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Mobile Small */
+@media (max-width: 575px) {
+    .magnified-viewer {
+        display: none !important;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .view-container {
+        padding: var(--spacing-xs);
+    }
+
+    .main-header {
+        margin-bottom: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .strategy-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .assignment-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .strategy-card {
+        max-width: 100%;
+    }
+
+    .card-image {
+        height: 120px;
+    }
+
+    .timer-display {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .timer-value {
+        font-size: 1.1rem;
+    }
+
+    .current-player-info {
+        font-size: 1rem;
+    }
+
+    .timer-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .phase-nav {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .phase-btn {
+        width: 100%;
+        padding: var(--spacing-sm);
+    }
+
+    #add-player-form {
+        flex-direction: column;
+    }
+
+    .players-list {
+        grid-template-columns: 1fr;
+    }
+
+    .player-card {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .player-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .speaker-options {
+        flex-direction: column;
+    }
+
+    .main-footer {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .main-footer .btn {
+        width: 100%;
+        font-size: 0.85rem;
+    }
+
+    .btn-large {
+        width: 100%;
+        padding: var(--spacing-md);
+    }
+
+    .vote-entry {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+
+    .outcome-selection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .outcome-selection label {
+        min-width: auto;
+    }
+
+    .outcome-selection input {
+        width: 100%;
+    }
+
+    .agenda-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .action-player-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .action-player-right {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .vp-display {
+        font-size: 1.2rem;
+    }
+
+    .modal-content {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+
+    .notification {
+        right: var(--spacing-sm);
+        top: var(--spacing-sm);
+        min-width: auto;
+        max-width: calc(100% - var(--spacing-md));
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    .btn,
+    .main-footer,
+    .phase-nav,
+    .timer-controls,
+    .vp-controls,
+    .notification {
+        display: none;
+    }
+
+    .strategy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .strategy-card {
+        border-color: #333;
+        background: white;
+        page-break-inside: avoid;
+    }
+}
+
+/* Landscape Orientation on Mobile */
+@media (max-width: 991px) and (orientation: landscape) {
+    .strategy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timer-display {
+        flex-direction: row;
+    }
+
+    .phase-nav {
+        flex-direction: row;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .card-image,
+    .faction-logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .strategy-card.current-player {
+        animation: none;
+    }
+
+    body::before {
+        animation: none;
+    }
+}
+
+/* Dark Mode Support (for future) */
+@media (prefers-color-scheme: dark) {
+    /* Already dark by default, no changes needed */
+}
+
+/* Light Mode Support (for future) */
+@media (prefers-color-scheme: light) {
+    /* Could add light theme variables here if desired */
+}

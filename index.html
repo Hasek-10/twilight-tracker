@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilight Imperium Game Tracker</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Setup Phase Container -->
+    <div id="setup-view" class="view-container">
+        <header class="main-header">
+            <h1>Twilight Imperium Game Tracker</h1>
+            <h2>Setup</h2>
+        </header>
+
+        <!-- Scoreboard (shown during round setup) -->
+        <div id="setup-scoreboard" class="setup-scoreboard hidden">
+            <div class="scoreboard-header">
+                <h3>Scoreboard</h3>
+            </div>
+            <div id="scoreboard-list" class="scoreboard-list">
+                <!-- Scoreboard populated by JavaScript -->
+            </div>
+        </div>
+
+        <section id="player-setup">
+            <h3>Add Players</h3>
+            <form id="add-player-form">
+                <input type="text" id="player-name" placeholder="Player Name" required maxlength="30">
+                <select id="faction-select" required>
+                    <option value="">Select Faction...</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Add Player</button>
+            </form>
+
+            <div id="players-list" class="players-list">
+                <!-- Player cards populated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="strategy-assignment">
+            <h3>Assign Strategy Cards</h3>
+            <p class="help-text">Click a strategy card, then click a player to assign</p>
+            <div id="assignment-grid" class="assignment-grid">
+                <!-- Assignment interface populated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="speaker-selection">
+            <h3>Select Speaker</h3>
+            <div id="speaker-options" class="speaker-options">
+                <!-- Radio buttons populated by JavaScript -->
+            </div>
+        </section>
+
+        <button id="start-game-btn" class="btn btn-primary btn-large">Start Game</button>
+    </div>
+
+    <!-- Status Phase Container -->
+    <div id="status-view" class="view-container hidden">
+        <header class="main-header">
+            <h1>Twilight Imperium Game Tracker</h1>
+            <div id="timer-display" class="timer-display">
+                <div class="current-player-info">
+                    <span id="current-player-name">-</span>
+                </div>
+                <div class="timer-controls">
+                    <span id="timer" class="timer-value">00:00</span>
+                    <button id="pause-timer-btn" class="btn btn-small">Pause</button>
+                    <button id="next-player-btn" class="btn btn-small">Next Player</button>
+                </div>
+            </div>
+            <nav class="phase-nav">
+                <button id="nav-status" class="phase-btn active">Status</button>
+                <button id="nav-agenda" class="phase-btn">Agenda</button>
+            </nav>
+        </header>
+
+        <main id="strategy-grid" class="strategy-grid">
+            <!-- Strategy cards populated by JavaScript -->
+        </main>
+
+        <!-- Magnified Card Viewer -->
+        <div id="magnified-viewer" class="magnified-viewer hidden">
+            <div class="magnified-viewer-header">
+                <h3>Activated Card</h3>
+                <button id="close-magnified-btn" class="btn btn-icon">×</button>
+            </div>
+            <img id="magnified-card-image" class="magnified-card-image" src="" alt="Strategy Card">
+            <div id="magnified-card-info" class="magnified-card-info">
+                <div class="magnified-card-name"></div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <button id="return-setup-btn" class="btn">Return to Setup</button>
+            <button id="save-game-btn" class="btn">Save Game</button>
+            <button id="reset-game-btn" class="btn btn-danger">Reset Game</button>
+        </footer>
+    </div>
+
+    <!-- Action Phase Container -->
+    <div id="action-view" class="view-container hidden">
+        <header class="main-header">
+            <h1>Twilight Imperium Game Tracker</h1>
+            <h2>Action Phase</h2>
+            <div id="timer-display-action" class="timer-display">
+                <div class="timer-controls">
+                    <span id="timer-action" class="timer-value">00:00</span>
+                    <button id="pause-timer-action-btn" class="btn btn-small">Pause</button>
+                </div>
+            </div>
+            <nav class="phase-nav">
+                <button id="nav-status-2" class="phase-btn">Status</button>
+                <button id="nav-agenda-2" class="phase-btn">Agenda</button>
+            </nav>
+        </header>
+
+        <main id="action-phase-content" class="action-phase-content">
+            <div class="action-controls">
+                <button id="reset-passes-btn" class="btn btn-large">Reset Round (Clear All Passes)</button>
+            </div>
+            <div id="action-players-list" class="action-players-list">
+                <!-- Player list with pass buttons populated by JavaScript -->
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <button id="return-setup-action-btn" class="btn">Return to Setup</button>
+            <button id="save-game-action-btn" class="btn">Save Game</button>
+        </footer>
+    </div>
+
+    <!-- Agenda Phase Container -->
+    <div id="agenda-view" class="view-container hidden">
+        <header class="main-header">
+            <h1>Twilight Imperium Game Tracker</h1>
+            <h2>Agenda Phase</h2>
+            <nav class="phase-nav">
+                <button id="nav-status-3" class="phase-btn">Status</button>
+                <button id="nav-agenda-3" class="phase-btn active">Agenda</button>
+            </nav>
+        </header>
+
+        <main id="agenda-phase-content" class="agenda-phase-content">
+            <section class="current-agenda-section">
+                <h3>Current Agenda</h3>
+                <form id="new-agenda-form">
+                    <input type="text" id="agenda-name" placeholder="Agenda Name (optional)" maxlength="50">
+                    <button type="submit" class="btn btn-primary">Start New Agenda</button>
+                </form>
+
+                <div id="current-agenda-votes" class="current-agenda-votes hidden">
+                    <h4 id="current-agenda-title">Recording Votes</h4>
+                    <div id="vote-entries" class="vote-entries">
+                        <!-- Vote entry forms populated by JavaScript -->
+                    </div>
+                    <div class="outcome-selection">
+                        <label for="agenda-outcome">Outcome:</label>
+                        <input type="text" id="agenda-outcome" placeholder="e.g., For, Against, Planet Name" required>
+                    </div>
+                    <button id="complete-agenda-btn" class="btn btn-primary">Complete Agenda</button>
+                </div>
+            </section>
+
+            <section class="agenda-history-section">
+                <h3>Agenda History</h3>
+                <div id="agenda-history-list" class="agenda-history-list">
+                    <!-- Agenda history populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <button id="return-setup-agenda-btn" class="btn">Return to Setup</button>
+            <button id="save-game-agenda-btn" class="btn">Save Game</button>
+        </footer>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification hidden"></div>
+
+    <!-- Win Condition Modal -->
+    <div id="win-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Victory!</h2>
+            <p id="win-message"></p>
+            <button id="close-win-modal" class="btn btn-primary">Continue Game</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/state-manager.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/player-manager.js"></script>
+    <script src="js/strategy-card-manager.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/action-phase-manager.js"></script>
+    <script src="js/agenda-phase-manager.js"></script>
+    <script src="js/victory-point-manager.js"></script>
+    <script src="js/ui-renderer.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
